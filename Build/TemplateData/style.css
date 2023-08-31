@@ -1,0 +1,171 @@
+body, div {
+    padding: 0;
+    margin: 0;
+	overflow: hidden;
+}
+
+#app-container {
+    position: absolute;
+    background: url("background.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#game-container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%
+}
+
+#loading-progress {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 80%;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background: rgba(127, 127, 127, 0.35);
+}
+
+#loading-progress.progress-bar .progress {
+    background: #c8b13d;
+    width: 50%;
+    height: 10px;
+}
+
+/* common classes */
+.expand {
+}
+
+.screen-size.expand {
+    width: 100vw;
+    height: 100vh;
+}
+
+.parent-size.expand {
+    width: 100%;
+    height: 100%;
+}
+
+.progress-bar {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 100px;
+    height: 40px;
+    width: 500px;
+}
+
+.hidden {
+    display: none;
+}
+
+.progress-bar .progress {
+    border-radius: 100px;
+    background: #ffffff;
+    height: 30px;
+    width: 0;
+    box-shadow: 0 10px 40px -10px #ffffff;
+}
+
+
+#unity-container {
+    position: absolute
+}
+
+#unity-container.unity-desktop {
+    width: 100%;
+    height: 100%
+}
+
+#unity-container.unity-mobile {
+    width: 100%;
+    height: 100%
+}
+
+#unity-canvas {
+    /*background: black;*/
+    width: 100%;
+    height: 100%
+}
+
+.unity-mobile #unity-canvas {
+    width: 100%;
+    height: 100%
+}
+
+#unity-loading-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none
+}
+
+#unity-logo {
+    width: 154px;
+    height: 130px;
+    background: aqua no-repeat center;
+}
+
+#unity-progress-bar-empty {
+    width: 141px;
+    height: 18px;
+    margin-top: 10px;
+    margin-left: 6.5px;
+    background: bisque no-repeat center;
+}
+
+#unity-progress-bar-full {
+    width: 0%;
+    height: 18px;
+    margin-top: 10px;
+    background: brown no-repeat center;
+}
+
+#unity-footer {
+    position: relative
+}
+
+.unity-mobile #unity-footer {
+    display: none
+}
+
+#unity-webgl-logo {
+    float: left;
+    width: 204px;
+    height: 38px;
+    background: url('webgl-logo.png') no-repeat center
+}
+
+#unity-build-title {
+    float: right;
+    margin-right: 10px;
+    line-height: 38px;
+    font-family: arial;
+    font-size: 18px
+}
+
+#unity-fullscreen-button {
+    float: right;
+    width: 38px;
+    height: 38px;
+    background: url('fullscreen-button.png') no-repeat center
+}
+
+#unity-warning {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%);
+    background: white;
+    padding: 10px;
+    display: none
+}
