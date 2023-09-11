@@ -1,171 +1,112 @@
-body, div {
-    padding: 0;
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+canvas {
+    display: block;
+}
+
+body {
     margin: 0;
-	overflow: hidden;
 }
-
-#app-container {
-    position: absolute;
-    background: url("background.jpg") no-repeat center;
-    background-size: cover;
-}
-
-#game-container {
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-#game-canvas {
-    width: 100%;
-    height: 100%
-}
-
-#loading-progress {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    width: 80%;
-    height: 20px;
-    transform: translate(-50%, -50%);
-    background: rgba(127, 127, 127, 0.35);
-}
-
-#loading-progress.progress-bar .progress {
-    background: #c8b13d;
-    width: 50%;
-    height: 10px;
-}
-
-/* common classes */
-.expand {
-}
-
-.screen-size.expand {
-    width: 100vw;
-    height: 100vh;
-}
-
-.parent-size.expand {
-    width: 100%;
-    height: 100%;
-}
-
-.progress-bar {
-    display: flex;
-    background: rgba(255, 255, 255, 0.1);
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 5px;
-    border-radius: 100px;
-    height: 40px;
-    width: 500px;
-}
-
-.hidden {
-    display: none;
-}
-
-.progress-bar .progress {
-    border-radius: 100px;
-    background: #ffffff;
-    height: 30px;
-    width: 0;
-    box-shadow: 0 10px 40px -10px #ffffff;
-}
-
 
 #unity-container {
-    position: absolute
-}
-
-#unity-container.unity-desktop {
     width: 100%;
-    height: 100%
-}
-
-#unity-container.unity-mobile {
-    width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 #unity-canvas {
-    /*background: black;*/
     width: 100%;
-    height: 100%
+    height: 100%;
+    background: #151515;
 }
 
-.unity-mobile #unity-canvas {
+#loading-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #unity-loading-bar {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: none
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #unity-logo {
-    width: 154px;
-    height: 130px;
-    background: aqua no-repeat center;
+    text-align: center;
+}
+
+#unity-logo img {
+    max-width: 80%;
 }
 
 #unity-progress-bar-empty {
-    width: 141px;
-    height: 18px;
-    margin-top: 10px;
-    margin-left: 6.5px;
-    background: bisque no-repeat center;
+    width: 50%;
+    height: 20px;
+    margin: 10px 20px 20px 10px;
+    text-align: left;
+    border: 1px solid white;
+    border-radius: 2px;
+    padding: 2px;
 }
 
 #unity-progress-bar-full {
     width: 0%;
-    height: 18px;
-    margin-top: 10px;
-    background: brown no-repeat center;
+    height: 100%;
+    background: #1edb00;
+    border-radius: 2px;
 }
 
-#unity-footer {
-    position: relative
+.light #unity-progress-bar-empty {
+    border-color: black;
 }
 
-.unity-mobile #unity-footer {
-    display: none
+.light #unity-progress-bar-full {
+    background: black;
 }
 
-#unity-webgl-logo {
-    float: left;
-    width: 204px;
-    height: 38px;
-    background: url('webgl-logo.png') no-repeat center
+.spinner,
+.spinner:after {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
 }
 
-#unity-build-title {
-    float: right;
-    margin-right: 10px;
-    line-height: 38px;
-    font-family: arial;
-    font-size: 18px
+.spinner {
+    margin: 10px;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1em solid #1edb00;
+    transform: translateZ(0);
+    animation: spinner-spin 1.1s infinite linear;
 }
 
-#unity-fullscreen-button {
-    float: right;
-    width: 38px;
-    height: 38px;
-    background: url('fullscreen-button.png') no-repeat center
-}
+@keyframes spinner-spin {
+    0% {
+        transform: rotate(0deg);
+    }
 
-#unity-warning {
-    position: absolute;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%);
-    background: white;
-    padding: 10px;
-    display: none
+    100% {
+        transform: rotate(360deg);
+    }
 }
