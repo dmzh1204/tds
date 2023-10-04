@@ -43,7 +43,7 @@
       gp.player.ready.finally(_gpAwaiter.done);
 
       await _unityAwaiter.ready;
-      gp.gameStart();
+      setTimeout(() => gp.gameStart(), 2000);
     };
   </script>
 
@@ -69,11 +69,11 @@
 
   <script>
     const buildUrl = "Build";
-    const loaderUrl = buildUrl + "/tds_web_deploy.loader.js";
+    const loaderUrl = buildUrl + "/build.loader.js";
     const config = {
-      dataUrl: buildUrl + "/tds_web_deploy.data.unityweb",
-      frameworkUrl: buildUrl + "/tds_web_deploy.framework.js.unityweb",
-      codeUrl: buildUrl + "/tds_web_deploy.wasm.unityweb",
+      dataUrl: buildUrl + "/build.data.unityweb",
+      frameworkUrl: buildUrl + "/build.framework.js.unityweb",
+      codeUrl: buildUrl + "/build.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "BarbarGames",
       productName: "Tanchiki",
@@ -104,7 +104,7 @@
       container.className = "unity-mobile";
     }
 
-    canvas.style.background = "url('" + buildUrl + "/tds_web_deploy.jpg.unityweb') center / cover";
+    canvas.style.background = "url('" + buildUrl + "/build.jpg.unityweb') center / cover";
     loadingCover.style.display = "";
 
     const unityLoader = document.createElement("script");
